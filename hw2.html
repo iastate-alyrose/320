@@ -14,7 +14,7 @@ for(i=0; i<intext.length; i++)
 	 }
 	outtext += String.fromCharCode(result)
    }
-  if(x >= 97 && x<= 122)
+  else if(x >= 97 && x<= 122)
    {
      result = parseInt(((x - 97 + shift)% 26) + 97)
 	 if(result < 97)
