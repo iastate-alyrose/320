@@ -1,0 +1,101 @@
+<script>
+<script>
+	let questions = 
+	{
+	"on": ["on",
+	       "My phone is ________ the counter.",
+           "Do you have any games ________ your laptop?",
+           "He dropped his pencil ________ the floor.",
+           "You can see your grades ________ Canvas.",
+           "She was ________ a mission."],
+	"with": ["with", "Are you finished ________ your homwork?",
+  "I am friends ________ that girl.",
+  "I always eat ketchup ________ fries.",
+  "Can you grab the blanket ________ stripes on it?",
+  "Do you live ________ your parents?"],
+	"across": ["across", "Are you finished ________ your homwork?",
+  "I am friends ________ that girl.",
+  "I always eat ketchup ________ fries.",
+  "Can you grab the blanket ________ stripes on it?",
+  "Do you live ________ your parents?"],
+	"from": ["from", "Are you ________ Iowa?",
+  "That was a gift ________ my grandmother.",
+  "It takes three hours to drive ________ here to Omaha.",
+  "His family moved here ________ Canada.",
+  "Get away ________ me."],
+	"behind": ["behind", "He is ________ the door."]
+	}
+	
+	let counts =
+	{
+	"on":0,
+	"with":0,
+	"across":0,
+	"from":0,
+	"behind":0
+	}
+	
+    let min = 9999
+	let next = "on"
+	let answer = ""
+	
+	while (answer != "quit") {
+		let random = parseInt(Math.random() * 5) + 1
+		Object.getOwnPropertyNames(counts).forEach(
+			function (val, idx, array) {
+				if (counts[val] < min) {
+					min = counts[val]
+					next = val
+				}
+			}
+		);
+		min = 9999
+		answer = prompt(questions[next][random]).toLowerCase();
+		if (answer === questions[next][0]) {
+			counts[next] = counts[next] + 1
+			alert("Correct!")
+		} else if (answer === "quit") {
+			alert("Thanks for playing! See you soon!")
+		} else {
+			counts[next] = counts[next] - 1
+			correct = questions[next][random].replace("________", questions[next][0])
+			alert("Incorrect. This is the correct answer: " + correct)
+		}
+		
+	}
+
+</script>
+
+
+
+</script>
+
+
+On
+  My phone is ________ the counter.
+  Do you have any games ________ your laptop?
+  He dropped his pencil ________ the floor.
+  You can see your grades ________ Canvas.
+  She was ________ a mission.
+  
+With
+  Are you finished ________ your homwork?
+  I am friends ________ that girl.
+  I always eat ketchup ________ fries.
+  Can you grab the blanket ________ stripes on it?
+  Do you live ________ your parents?
+  
+Across
+  Are you finished ________ your homwork?
+  I am friends ________ that girl.
+  I always eat ketchup ________ fries.
+  Can you grab the blanket ________ stripes on it?
+  Do you live ________ your parents?
+  
+From
+  Are you ________ Iowa?
+  That was a gift ________ my grandmother.
+  It takes three hours to drive ________ here to Omaha.
+  His family moved here ________ Canada.
+  Get away ________ me.
+  
