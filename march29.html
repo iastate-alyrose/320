@@ -1,0 +1,17 @@
+<script>
+questions = [
+"How are you liking the weather this week?",
+"How do you like Ames?",
+"What do you think about football?"
+]
+x = prompt("How are you?")
+while (true) {
+  if (/\b(good|great|well|fine|awesome|fantastic|alright)\b/i.test(x)) {
+    x = prompt("I'm glad to hear that. " + questions[parseInt(Math.random()*questions.length)])
+  } else if (/\b(bad|awful)\b/i.test(x)) {
+    x = prompt("I'm sorry to hear that. " + questions[parseInt(Math.random()*questions.length)])
+  } else {
+    x = prompt("How does that make you feel?")
+  }
+}
+</script>
